@@ -1,0 +1,11 @@
+{
+  "name": "angular.hx",
+  "version": "0.0.0",
+  "description": "Haxe bindings for angular.js",
+  "dependencies": {
+    "bower": "~0.8.5"
+  },
+  "repository": "",
+  "author": "Philipp Klose <me@thehippo.de>",
+  "license": "MIT"
+}
