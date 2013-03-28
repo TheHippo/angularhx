@@ -1,7 +1,9 @@
 package test;
 
+import angularhx.Http;
 import angularhx.IAngularController;
 import angularhx.IAngularScope;
+import angularhx.Scope;
 
 using StringTools;
 
@@ -26,13 +28,17 @@ class ControllerData implements IAngularScope  {
 }
 
 @controllerName('TestCtrl')
-@inject('$scope')
+@inject('$scope', '$http')
 class Test1Controller implements IAngularController {
 
 
-	function new(scope:angularhx.Scope) {
+	function new(scope:Scope, http:Http) {
 		trace("new Test1Controller");
-
+		http.get('test.json').success(function(data,status,headers, config) {
+			trace("success: " + data);
+		}).error(function(data, status, headers, config) {
+			trace('error ${status}');
+		});
 		var data = new ControllerData('myDefaultName', scope);
 	}
 }
