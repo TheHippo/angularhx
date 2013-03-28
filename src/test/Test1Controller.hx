@@ -1,9 +1,12 @@
 package test;
 
+import angularhx.IAngularController;
+import angularhx.IAngularScope;
+
 using StringTools;
 
 
-class ControllerData implements angularhx.IAngularScope  {
+class ControllerData implements IAngularScope  {
 
 	public var name:String;
 
@@ -24,7 +27,7 @@ class ControllerData implements angularhx.IAngularScope  {
 
 @controllerName('TestCtrl')
 @inject('$scope')
-class Test1Controller implements angularhx.IAngularController {
+class Test1Controller implements IAngularController {
 
 
 	function new(scope:angularhx.Scope) {
