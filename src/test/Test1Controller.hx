@@ -34,9 +34,9 @@ class Test1Controller implements IAngularController {
 
 	function new(scope:Scope, http:Http) {
 		trace("new Test1Controller");
-		http.get('test.json').success(function(data,status,headers, config) {
+		http.get('test.json').success(function(data) {
 			trace("success: " + data);
-		}).error(function(data, status, headers, config) {
+		}).error(function(data, status) {
 			trace('error ${status}');
 		});
 		var data = new ControllerData('myDefaultName', scope);
