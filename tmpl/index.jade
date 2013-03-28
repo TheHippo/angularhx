@@ -12,11 +12,10 @@ html
 			.row(ng-controller="TestCtrl")
 				.span12
 					h2 TestController
-					input(type="text", ng-model="name", placeholder="Enter your name")
+					input(type="text", ng-model="name", placeholder="Enter your name", ng-change='change()')
 					p Hello {{name}}!
 					br
 					a.btn(ng-click="update()") Update
-					a.btn(ng-click="toLower()") toLower
 
 		script(src='scripts/angular.js',type="text/javascript")
 		script(src='scripts/test.js',type="text/javascript")
