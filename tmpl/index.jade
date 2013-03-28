@@ -3,12 +3,20 @@ html
 	head
 		title angular.hx
 		link(rel="stylesheet", href="css/bootstrap.css")
-	body
+	body(ng-app)
 		.container
 			.row
 				.span12
 					h1 angular.hx
 					p Haxe bindings for angular.js
+			.row(ng-controller="TestCtrl")
+				.span12
+					h2 TestController
+					input(type="text", ng-model="name", placeholder="Enter your name")
+					p Hello {{name}}!
+					br
+					a.btn(ng-click="update()") Update
+					a.btn(ng-click="toLower()") toLower
 
 		script(src='scripts/angular.js',type="text/javascript")
 		script(src='scripts/test.js',type="text/javascript")
