@@ -4,7 +4,8 @@
   "description": "Haxe bindings for angular.js",
   "dependencies": {
     "bower": "~0.8.5",
-    "jade": "~0.28.2"
+    "jade": "~0.28.2",
+    "uglify-js": "~2.2.5"
   },
   "repository": "",
   "author": "Philipp Klose <me@thehippo.de>",
