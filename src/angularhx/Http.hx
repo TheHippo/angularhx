@@ -2,7 +2,7 @@ package angularhx;
 
 import angularhx.Promise;
 
-typedef HttpData = String;
+typedef HttpData = Dynamic;
 typedef HttpStatus = Int;
 typedef HttpHeaders = Dynamic;
 typedef HttpConfig = Dynamic;

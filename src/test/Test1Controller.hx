@@ -10,11 +10,16 @@ using StringTools;
 
 class ControllerData implements IAngularScope  {
 
-	public var name:String;
+	private var name:String;
+	private var readOnly:Bool;
 
-	public function new(defaultName:String) {
-		this.name = defaultName;
-		trace("set defaultName to " +  defaultName);
+	public function new() {
+		this.readOnly = true;
+	}
+
+	public function setName(name:Null<String>) {
+		this.name = name;
+		this.readOnly = name == null;
 	}
 
 	public function change() {
@@ -34,12 +39,13 @@ class Test1Controller implements IAngularController {
 
 	function new(scope:Scope, http:Http) {
 		trace("new Test1Controller");
+		var scopeData = new ControllerData(scope);
 		http.get('test.json').success(function(data) {
-			trace("success: " + data);
+			trace("success: " + data.defaultName);
+			scopeData.setName(data.defaultName);
 		}).error(function(data, status) {
 			trace('error ${status}');
 		});
-		var data = new ControllerData('myDefaultName', scope);
 	}
 }
 
