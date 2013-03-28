@@ -1,0 +1,4 @@
+-main Test
+-cp src
+-js www/scripts/test.js
+-debug
