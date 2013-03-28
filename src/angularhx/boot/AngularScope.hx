@@ -70,7 +70,9 @@ class AngularScope {
 					__js__('for (var k in this) {');
 						scope[k] = this[k];
 					__js__('}');
+					// call old constructor if available
 					$e{cExpr};
+					// trick Haxe return new object instead of actual class object
 					return scope;
 				}
 			})

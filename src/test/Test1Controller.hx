@@ -3,17 +3,6 @@ package test;
 using StringTools;
 
 
-// class Extender {
-
-// 	public var name:String;
-
-// 	public function toLower() {
-// 		trace("Extender");
-// 		this.name = this.name.toLowerCase();
-// 	}
-// }
-
-
 class ControllerData implements angularhx.IAngularScope  {
 
 	public var name:String;
@@ -21,6 +10,10 @@ class ControllerData implements angularhx.IAngularScope  {
 	public function new(defaultName:String) {
 		this.name = defaultName;
 		trace("set defaultName to " +  defaultName);
+	}
+
+	public function change() {
+		trace("Changed value to: " + this.name);
 	}
 
 	public function update() {
